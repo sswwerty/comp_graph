@@ -1,0 +1,10 @@
+build/
+build-debug/
+build-release/
+_deps/
+CMakeCache.txt
+CMakeFiles/
+*.spv
+.DS_Store
+
+build-local/

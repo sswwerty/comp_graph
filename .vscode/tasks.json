@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Lab 1",
+      "type": "shell",
+      "command": "source \"$HOME/VulkanSDK/1.4.350.1/setup-env.sh\" && cmake -S \"${workspaceFolder}\" -B \"${workspaceFolder}/build-local\" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_OSX_SYSROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk && cmake --build \"${workspaceFolder}/build-local\" --parallel 6",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": { "executable": "/bin/zsh", "args": ["-c"] }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run Lab 1",
+      "type": "shell",
+      "command": "source \"$HOME/VulkanSDK/1.4.350.1/setup-env.sh\" && \"${workspaceFolder}/build-local/testbed/testbed\"",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": { "executable": "/bin/zsh", "args": ["-c"] }
+      },
+      "dependsOn": "Build Lab 1",
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ]
+}
