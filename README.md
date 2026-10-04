@@ -17,12 +17,6 @@
 
 ## Как запустить
 
-Проект проверен на macOS с Apple Command Line Tools, CMake и Vulkan SDK 1.4.350.1 (включая MoltenVK и `glslc`). При первой конфигурации CMake может понадобиться интернет для загрузки зависимостей.
-
-**В VS Code:** откройте папку проекта. Для сборки нажмите `Cmd+Shift+B` и выберите `Build Lab 1`. Для сборки и запуска откройте `Terminal → Run Task… → Run Lab 1`.
-
-**Через терминал:** перейдите в папку проекта и выполните:
-
 ```sh
 cd /Users/nasy/Documents/CG/lr_1
 source "$HOME/VulkanSDK/1.4.350.1/setup-env.sh"
@@ -30,15 +24,6 @@ cmake -S . -B build-local -DCMAKE_BUILD_TYPE=Debug -DCMAKE_OSX_SYSROOT=/Library/
 cmake --build build-local --parallel 6
 ./build-local/testbed/testbed
 ```
-
-Запускайте программу из корня проекта: она ищет шейдеры по относительным путям. Для повторного запуска после успешной сборки достаточно снова загрузить окружение SDK и выполнить последнюю команду.
-
-## Что показать на защите
-
-1. Переключить `Perspective projection` и показать, как меняется вид сцены.
-2. В списке `Object` выбрать сначала `Animated cube`, затем `Second cube`. Изменить `Position`, `Rotation (degrees)`, `Scale` и `Object color` у каждого — настройки у кубов независимые.
-3. Включить и выключить `Procedural vertex colors`, чтобы показать вычисляемую окраску вершин.
-4. Остановить и запустить анимацию через `Play animation`. Изменить `Animation speed`, `Orbit radii`, `Orbit frequencies` и `Spin speed (deg/s)`. Кнопка `Reset animation phase` возвращает движение к начальной фазе.
 
 ## Где находится код
 
